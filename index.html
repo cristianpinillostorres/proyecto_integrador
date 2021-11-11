@@ -19,22 +19,23 @@
 				<div class="form-section">
 					<h3>Iniciar Sesion</h3>
 					<h6></h6>
-					<form action="#" method="post" class="signin-form">
 						<div class="form-input">
-							<input type="text" name="Username" placeholder="Nombre Ususario" required="" autofocus>
+							<input type="text" id="txtcorreo" placeholder="Correo electronico" required="" autofocus>
 						</div>
 						<div class="form-input">
-							<input type="password" name="password" placeholder="Contraseña" required="">
+							<input type="password" id="txtcontrasenia" placeholder="Contraseña" required="">
 						</div>
 						<label class="check-remaind">
 						</label>
-						<button type="submit" class="btn btn-primary theme-button mt-4">Iniciar Sesion</button>
-
-					</form>
+						<button type="submit" class="btn btn-primary theme-button mt-4" onclick="iniciarSesion()" >Iniciar Sesion</button>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/index.js"></script>
+
 </body>
 </html>
 
