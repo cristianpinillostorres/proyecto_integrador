@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth} from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 window.salir = function salir() {
       const auth = getAuth();
       signOut(auth).then(() =>{
+        console.log("salio");
             document.location.href = "/index.html";
       }).catch((err) =>{
           alert("Se produce error al cerrar la sesion");

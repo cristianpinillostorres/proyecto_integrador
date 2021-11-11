@@ -16,7 +16,7 @@ window.iniciarSesion = function iniciarSesion() {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             //va al index
-            document.location.href = "/index-register.html";
+            document.location.href = "/interfazPrincipal.html";
         }).catch((error) => {
             document.getElementById("alertErrorLogueo").style.display = "block";
             document.getElementById("alertErrorLogueo").innerHTML = error.message;
