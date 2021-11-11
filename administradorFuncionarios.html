@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-    <title>ADMINISTRADOR DE FUNCIONES</title>
+    <title>ADMINISTRADOR DE FUNCIONARIOS</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -107,9 +107,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
-                                    <p>Cerrar Sesion</p>
-                                </a>
+                                <button type="submit" class="btn btn-primary theme-button mt-4" onclick="salir()">cerrar
+                                    Sesion</button>
                             </li>
                             <li class="separator hidden-lg"></li>
                         </ul>
@@ -122,16 +121,16 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <center>
                                 <h2 class="title">Registrar datos del funcionario</h2>
                             </center>
                             <form action="insertar.php" method="POST">
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="cod_administrador" 
-                                    placeholder="ID"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo"
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15}
+                                    name="id" placeholder="ID"><br>
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="cedula"
                                     placeholder="CEDULA"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres"
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombre"
                                     placeholder="NOMBRES"><br>
                                 <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos"
                                     placeholder="APELLIDOS"><br>
@@ -139,16 +138,38 @@
                                 <input type="submit" class="btn btn-primary btn-user btn-block">
                             </form>
                         </div>
-                        <br><br><br>
-                        <br><br><br>
-                        <center>
-                            <h3 class="title">ADMINISTRADOR FUNCIONARIOS<br />
-                                <small></small>
-                            </h3>
-                            <h5>Ver Lista de funcionario</h5>
-                            <th><a href="administrador.php" class="btn btn-info">Mostrar</a></th>
-                            </a>
-                        </center>
+
+                    <div class="col-md-9">
+                        <table class="table" >
+                            <thead class="table-success table-striped" >
+                                <tr>
+                                    <center><th>ID</th>
+                                    <th>CEDULA</th>
+                                    <th>NOMBRES</th>
+                                    <th>APELIIDOS</th>
+                                    <th></th>
+                                    <th></th></center>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                    <?php
+                                        while($row=mysqli_fetch_array($query)){
+                                    ?>
+                                        <tr>
+                                            <th><?php  echo $row['cod_estudiante']?></th>
+                                            <th><?php  echo $row['dni']?></th>
+                                            <th><?php  echo $row['nombres']?></th>
+                                            <th><?php  echo $row['apellidos']?></th>    
+                                            <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
+                                            <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?>
+                            </tbody>
+                        </table>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -178,7 +199,7 @@
 
     </div>
     </div>
-
+    <script type="module" src="js/firebase.js"></script>
 
 </body>
 
