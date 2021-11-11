@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/img/logoblanco.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>YOUR PRESIGNER</title> 
+    <title>REPORTES</title> 
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -34,57 +34,39 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="azure" data-image="assets/img/lateral3.jpg">
+    <div class="sidebar" data-color="red" data-image="">
 
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-<div class="sidebar-wrapper ">
+    <div class="sidebar-wrapper ">
         <div class="logo ">
-            <a href="http://localhost/ProyectoS/BS3/dashboardDoctor.html " class="simple-text ">
-            YOUR PRESIGNER
-        </a>
+            <a href="InterfazPrincipal.html " class="simple-text ">
+                REPORTES
+            </a>
         </div>
 
         <ul class="nav ">
-            <li class="active ">
-                <a href="dashboardDoctor.html">
+            <li >
+                <a href="InterfazPrincipal.html">
                     <i class="pe-7s-like "></i>
-                    <p>PAGINA PRINCIPAL</p>
+                    <p>INTERFAZ PRINCIPAL</p>
                 </a>
             </li>
             <li>
-                <a href="userDoctor.html">
+                <a href="administradorFuncionarios.html">
                     <i class="pe-7s-user "></i>
-                    <p>PERFIL DE USUARIO</p>
+                    <p>ADMINISTRADOR DE FUNCIONARIOS</p>
+                </a>
+            </li>
+            <li class="active " >
+                <a href="administrarClientes.html ">
+                    <i class="pe-7s-add-user "></i>
+                    <p>ADMINISTRADOR DE CLIENTES</p>
                 </a>
             </li>
             <li>
-                <a href="calculadoraDoctor.php">
-                    <i class="pe-7s-calculator "></i>
-                    <p>CALCULA TU EMBARAZO</p>
-                </a>
-            </li>
-            <li>
-                <a href="multimediaDoctor.html ">
-                    <i class="pe-7s-camera "></i>
-                    <p>MULTIMEDIA PRENATAL</p>
-                </a>
-            </li>
-            <li>
-                <a href="EtapasDoctor.html ">
-                    <i class="pe-7s-science "></i>
-                    <p>ETAPAS DEL EMBARAZO</p>
-                </a>
-            </li>
-            <li>
-                <a href="ControlesFuncionario.html">
-                    <i class="pe-7s-date "></i>
-                    <p>CONTROLES</p>
-                </a>
-            </li>
-            <li>
-                <a href="NutricionDoctor.html ">
-                    <i class="pe-7s-coffee "></i>
-                    <p>NUTRICION</p>
+                <a href="administrarReportes.html ">
+                    <i class="pe-7s- pe-7s-display2 "></i>
+                    <p>ADMINISTRADOR DE REPORTES</p>
                 </a>
             </li>
         </ul>
@@ -101,7 +83,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"> CONTROLES DOCTORES</a>
+                    <a class="navbar-brand" href="#"> CONTROLES  </a>
                 </div>
                 <div class="collapse navbar-collapse">
             
@@ -121,7 +103,9 @@
 
                               </a>
                               <ul class="dropdown-menu">
+                                <li><a href="dashboard.html">Administrador</a></li>
                                 <li><a href="dashboardDoctor.html">Doctores</a></li>
+                                <li><a href="dashboardPaciente.html">Pacientes</a></li>
                               </ul>
                         </li>
                         <li>
@@ -129,31 +113,40 @@
                                 <p>Cerrar Sesion</p>
                             </a>
                         </li>
+                        
 						<li class="separator hidden-lg"></li>
+                        
                     </ul>
+
                 </div>
             </div>
         </nav>
-
-        <div class="col-md-12">
-            <div class="header">
-                <h4 class="title">DATOS DE LOS CONTROLES</h4>
-                <p class="category"></p>
-            </div>
-            
-                <form action="insertar1.php" method="POST">
-
-                    <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="cod_administrador" placeholder="ID"><br>
-                    <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo" placeholder="CEDULA"><br>
-                    <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres" placeholder="NOMBRES"><br>
-                    <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos" placeholder="APELLIDOS"><br>
+    
+                <div class="col-md-12">
+                    <div class="header">
+                        <h4 class="title">DATOS DE LOS CONTROLES</h4>
+                        <p class="category"></p>
+                    </div>
                     
-                    <input type="submit" class="btn btn-primary btn-user btn-block">
-                </form>
-                <li>
-                    <th><a href="Microservicio/api.html" class="btn btn-primary btn-user btn-block">Mostrar Mapa de Los Controles</a></th>
-                </li>
-        </div>
+                        <form action="insertar.php" method="POST">
+
+                            <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="cod_administrador" placeholder="ID"><br>
+                            <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo" placeholder="CEDULA"><br>
+                            <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres" placeholder="NOMBRES"><br>
+                            <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos" placeholder="APELLIDOS"><br>
+                            
+                            <input type="submit" class="btn btn-primary btn-user btn-block">
+                        </form>
+                        <li>
+                            <th><a href="Microservicio/api.html" class="btn btn-primary btn-user btn-block">Mostrar Mapa de Los Controles</a></th>
+                        </li>
+                </div>
+           
+
+        
+
+        
+
 
         <footer class="footer">
             <div class="container-fluid">
@@ -194,8 +187,8 @@
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
 
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!--  Google Maps Plugin    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
