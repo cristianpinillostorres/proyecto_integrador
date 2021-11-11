@@ -1,5 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, TwitterAuthProvider, GithubAuthProvider,FacebookAuthProvider} from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
 
+import { verAutenticacion } from "./firebase.js";
 
 window.iniciarSesion = function iniciarSesion() {
 
