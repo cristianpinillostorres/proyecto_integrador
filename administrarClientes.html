@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" xml:lang="es">
 
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="" href="assets/img/logoBlanco.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>ADMINISTRADOR CLIENTES</title>
+
+    <title>ADMINISTRADOR DE CLIENTES</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -14,6 +15,7 @@
 
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet" />
@@ -30,44 +32,34 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
 </head>
 
 <body>
-
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="">
 
-            <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+        <div class="sidebar" data-color="red" data-image="">
             <div class="sidebar-wrapper ">
                 <div class="logo ">
-                    <a href="InterfazPrincipal.html " class="simple-text ">
-                        MOVIP S.A.S
-                    </a>
+                    <a href="InterfazPrincipal.html " class="simple-text ">MOVIP S.A.S</a>
                 </div>
-
                 <ul class="nav ">
                     <li>
-                        <a href="InterfazPrincipal.html">
-                            <i class="pe-7s-like "></i>
+                        <a href="InterfazPrincipal.html"><i class="pe-7s-like "></i>
                             <p>INTERFAZ PRINCIPAL</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="administradorFuncionarios.html">
-                            <i class="pe-7s-user "></i>
+                    <li class="active ">
+                        <a href="administradorFuncionarios.html"><i class="pe-7s-user "></i>
                             <p>ADMINISTRADOR DE FUNCIONARIOS</p>
                         </a>
                     </li>
-                    <li class="active ">
-                        <a href="administrarClientes.html ">
-                            <i class="pe-7s-add-user "></i>
+                    <li>
+                        <a href="administrarClientes.html "><i class="pe-7s-add-user "></i>
                             <p>ADMINISTRADOR DE CLIENTES</p>
                         </a>
                     </li>
                     <li>
-                        <a href="administrarReportes.html ">
-                            <i class="pe-7s- pe-7s-display2 "></i>
+                        <a href="AdministrarReportes.html"><i class="pe-7s- pe-7s-display2 "></i>
                             <p>ADMINISTRADOR DE REPORTES</p>
                         </a>
                     </li>
@@ -79,37 +71,13 @@
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#navigation-example-2">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">ADMINISTRADOR CLIENTES</a>
+                        <h3>ADMINISTRADOR DE CLIENTES</h3>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-left">
-
-                            <li>
-                                <!--  <a href="">
-                        <i class="fa fa-search"></i>
-                        <p class="hidden-lg hidden-md">Search</p>
-                        </a>
-                 -->
-                            </li>
-                        </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="InterfazPrincipal.html">
-                                    <p>Cuenta</p>
-                                </a>
-                            </li>
-                            <li>
-                                <button type="submit" class="btn btn-primary theme-button mt-4" onclick="salir()">cerrar
+                                <button type="submit" class="btn btn-a active" onclick="salir()">cerrar
                                     Sesion</button>
-                                </a>
                             </li>
                             <li class="separator hidden-lg"></li>
                         </ul>
@@ -118,102 +86,46 @@
             </nav>
 
             <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
+                <div class="row ">
+                    <div class="col-6 col-md-4">
+                        <div class="container-fluid">
+                            <h3 class="modal-title" id="lblTitulo" style="margin: 20px 0;">Registrar cliente</h3>
+                            <div class="form-group">
+                                <input id="txtNombre" type="text" class="form-control" placeholder="Nombre Compañia" /><br />
+                                <input id="txtNit" type="text" class="form-control" placeholder="Nit Compañia" /><br />
+                                <input id="txtTelefono" type="text" class="form-control" placeholder="Telefono" /><br />
+                            </div>
 
-                        <div class="col-md-3">
-                            <center>
-                                <h2 class="title">Registrar datos del cliente</h2>
-                            </center>
-                            <form action="insertar.php" method="POST">
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15}
-                                    name="cod_administrador" placeholder="ID"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo"
-                                    placeholder="CEDULA"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres"
-                                    placeholder="NOMBRES"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos"
-                                    placeholder="APELLIDOS"><br>
+                            <button type="button" onclick="operar()" class="btn btn-success active">Guardar</button>
 
-                                <input type="submit" class="btn btn-primary btn-user btn-block">
-                            </form>
-                        </div>
-                        <div class="col-md-9">
-                            <table class="table" >
-                                <thead class="table-success table-striped" >
-                                    <tr>
-                                        <center><th>ID</th>
-                                        <th>CEDULA</th>
-                                        <th>NOMBRES</th>
-                                        <th>APELIIDOS</th>
-                                        <th></th>
-                                        <th></th></center>
-                                    </tr>
-                                </thead>
-    
-                                <tbody>
-                                        <?php
-                                            while($row=mysqli_fetch_array($query)){
-                                        ?>
-                                            <tr>
-                                                <th><?php  echo $row['cod_estudiante']?></th>
-                                                <th><?php  echo $row['dni']?></th>
-                                                <th><?php  echo $row['nombres']?></th>
-                                                <th><?php  echo $row['apellidos']?></th>    
-                                                <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
-                                            </tr>
-                                        <?php 
-                                            }
-                                        ?>
-                                </tbody>
-                            </table>
+                            <div class="alert alert-danger" id="alertaErrorCrearUsuario" role="alert" style="display: none">
+                            </div>
+
                         </div>
                     </div>
-                </div>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                            </li>
-                            <li>
 
-                            </li>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>document.write(new Date().getFullYear())</script>
-                        <a href="https://www.ucundinamarca.edu.co/">Universidad de cundinamarca Sede Facatativá</a>
-                    </p>
+                    <div class="col-12 col-md-8">
+                        <div class="container-fluid">
+                            <h3>Listado de clientes</h3>
+                            <div id="divClientes">
+                            </div>          
+                        </div>
+
+                    </div>
+
+
                 </div>
-            </footer>
+
+            </div>
+
 
         </div>
     </div>
+
     <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/administradorClientes.js"></script>
 
 </body>
 
-<!--   Core JS Files   -->
-<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--  Charts Plugin -->
-<script src="assets/js/chartist.min.js"></script>
-
-<!--  Notifications Plugin    -->
-<script src="assets/js/bootstrap-notify.js"></script>
-
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
-<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
-
-<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-<script src="assets/js/demo.js"></script>
 
 </html>
