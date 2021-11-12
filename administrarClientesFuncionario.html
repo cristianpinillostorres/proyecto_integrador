@@ -6,7 +6,7 @@
     <link rel="icon" type="" href="assets/img/logoBlanco.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>ADMINISTRADOR CLIENTES</title>
+    <title>ADMINISTRADOR DE CLIENTES</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -36,37 +36,31 @@
 <body>
 
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="">
+        <div class="sidebar" data-color="blue" data-image="">
 
             <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
             <div class="sidebar-wrapper ">
                 <div class="logo ">
-                    <a href="InterfazPrincipal.html " class="simple-text ">
+                    <a href="" class="simple-text ">
                         MOVIP S.A.S
                     </a>
                 </div>
 
                 <ul class="nav ">
-                    <li>
-                        <a href="InterfazPrincipal.html">
+                    <li class="active ">
+                        <a href="InterfazPrincipalFuncionario.html">
                             <i class="pe-7s-like "></i>
                             <p>INTERFAZ PRINCIPAL</p>
                         </a>
                     </li>
                     <li>
-                        <a href="administradorFuncionarios.html">
-                            <i class="pe-7s-user "></i>
-                            <p>ADMINISTRADOR DE FUNCIONARIOS</p>
-                        </a>
-                    </li>
-                    <li class="active ">
-                        <a href="administrarClientes.html ">
+                        <a href="administrarClientesFuncionario.html ">
                             <i class="pe-7s-add-user "></i>
                             <p>ADMINISTRADOR DE CLIENTES</p>
                         </a>
                     </li>
                     <li>
-                        <a href="administrarReportes.html ">
+                        <a href="administrarReportesFuncionario.html ">
                             <i class="pe-7s- pe-7s-display2 "></i>
                             <p>ADMINISTRADOR DE REPORTES</p>
                         </a>
@@ -79,14 +73,13 @@
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#navigation-example-2">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">ADMINISTRADOR CLIENTES</a>
+                        <a class="navbar-brand" href="#">ADMINISTRADOR DE CLIENTES</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-left">
@@ -123,46 +116,44 @@
                                 <h2 class="title">Registrar datos del cliente</h2>
                             </center>
                             <form action="insertar.php" method="POST">
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15}
-                                    name="cod_administrador" placeholder="ID"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo"
-                                    placeholder="CEDULA"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres"
-                                    placeholder="NOMBRES"><br>
-                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos"
-                                    placeholder="APELLIDOS"><br>
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="cod_administrador" placeholder="ID"><br>
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="correo" placeholder="CEDULA"><br>
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="nombres" placeholder="NOMBRES"><br>
+                                <input type="text" class="form-control" pattern=["A-Za-z0-9_-"]{1,15} name="apellidos" placeholder="APELLIDOS"><br>
 
                                 <input type="submit" class="btn btn-primary btn-user btn-block">
                             </form>
                         </div>
                         <div class="col-md-9">
-                            <table class="table" >
-                                <thead class="table-success table-striped" >
+                            <table class="table">
+                                <thead class="table-success table-striped">
                                     <tr>
-                                        <center><th>ID</th>
-                                        <th>CEDULA</th>
-                                        <th>NOMBRES</th>
-                                        <th>APELIIDOS</th>
-                                        <th></th>
-                                        <th></th></center>
+                                        <center>
+                                            <th>ID</th>
+                                            <th>CEDULA</th>
+                                            <th>NOMBRES</th>
+                                            <th>APELIIDOS</th>
+                                            <th></th>
+                                            <th></th>
+                                        </center>
                                     </tr>
                                 </thead>
-    
+
                                 <tbody>
-                                        <?php
-                                            while($row=mysqli_fetch_array($query)){
-                                        ?>
-                                            <tr>
-                                                <th><?php  echo $row['cod_estudiante']?></th>
-                                                <th><?php  echo $row['dni']?></th>
-                                                <th><?php  echo $row['nombres']?></th>
-                                                <th><?php  echo $row['apellidos']?></th>    
-                                                <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
-                                            </tr>
-                                        <?php 
-                                            }
-                                        ?>
+                                    <?php
+                                    while ($row = mysqli_fetch_array($query)) {
+                                    ?>
+                                        <tr>
+                                            <th><?php echo $row['cod_estudiante'] ?></th>
+                                            <th><?php echo $row['dni'] ?></th>
+                                            <th><?php echo $row['nombres'] ?></th>
+                                            <th><?php echo $row['apellidos'] ?></th>
+                                            <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
+                                            <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -182,7 +173,9 @@
                     </nav>
                     <p class="copyright pull-right">
                         &copy;
-                        <script>document.write(new Date().getFullYear())</script>
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
                         <a href="https://www.ucundinamarca.edu.co/">Universidad de cundinamarca Sede Facatativá</a>
                     </p>
                 </div>
