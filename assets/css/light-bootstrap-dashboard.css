@@ -986,7 +986,7 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #afafaf;
+    color: #777777;
     opacity: 1;
     filter: alpha(opacity=100);
 }
@@ -999,7 +999,7 @@ fieldset[disabled] .btn-neutral.active {
 
 .form-control {
     background-color: #FFFFFF;
-    border: 1px solid #E3E3E3;
+    border: 1px solid #979797;
     border-radius: 4px;
     color: #222222;
     padding: 8px 12px;
