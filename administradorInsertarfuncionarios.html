@@ -1,21 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="" href="assets/img/logoBlanco.jpg">
+    <link rel="icon" type="" href="assets/img/logoBlanco.jpg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
 
     <title>ADMINISTRADOR DE FUNCIONARIOS</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta name="viewport" content="width=device-width" />
-
 
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet" />
@@ -23,14 +20,12 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
 
-
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
 
-
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css" />
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 
@@ -38,28 +33,28 @@
     <div class="wrapper">
 
         <div class="sidebar" data-color="red" data-image="">
-            <div class="sidebar-wrapper ">
-                <div class="logo ">
-                    <a href="InterfazPrincipal.html " class="simple-text ">MOVIP S.A.S</a>
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="InterfazPrincipal.html " class="simple-text">MOVIP S.A.S</a>
                 </div>
-                <ul class="nav ">
+                <ul class="nav">
                     <li>
-                        <a href="InterfazPrincipal.html"><i class="pe-7s-like "></i>
+                        <a href="InterfazPrincipal.html"><i class="pe-7s-like"></i>
                             <p>INTERFAZ PRINCIPAL</p>
                         </a>
                     </li>
-                    <li class="active ">
-                        <a href="administradorFuncionarios.html"><i class="pe-7s-user "></i>
+                    <li class="active">
+                        <a href="administradorFuncionarios.html"><i class="pe-7s-user"></i>
                             <p>ADMINISTRADOR DE FUNCIONARIOS</p>
                         </a>
                     </li>
                     <li>
-                        <a href="administrarClientes.html "><i class="pe-7s-add-user "></i>
+                        <a href="administrarClientes.html "><i class="pe-7s-add-user"></i>
                             <p>ADMINISTRADOR DE CLIENTES</p>
                         </a>
                     </li>
                     <li>
-                        <a href="AdministrarReportes.html"><i class="pe-7s- pe-7s-display2 "></i>
+                        <a href="AdministrarReportes.html"><i class="pe-7s- pe-7s-display2"></i>
                             <p>ADMINISTRADOR DE REPORTES</p>
                         </a>
                     </li>
@@ -76,20 +71,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <button type="submit" class="btn btn-a active" onclick="salir()">cerrar
-                                    Sesion</button>
+                                <button type="submit" class="btn btn-a" onclick="salir()">
+                                    cerrar Sesion
+                                </button>
                             </li>
                             <li class="separator hidden-lg"></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
             <div class="content">
-                <div class="row ">
-                    <div class="col-6 col-md-4">
-                        <div class="container-fluid">
-                            <h3 class="modal-title" id="lblTitulo" style="margin: 20px 0;">Registrar Funcionario</h3>
+                <div class="container-fluid">
+                    <div class="row ">
+                        <div class="col-sm-4">
+                            <h5 class="modal-title" id="lblTitulo"></h5>
                             <div class="form-group">
                                 <input id="txtUsuario" type="text" class="form-control"
                                     placeholder="Nombre usuario" /><br />
@@ -102,36 +97,19 @@
                                 <input id="txtRol" type="text" class="form-control" placeholder="Rol" /><br />
                             </div>
 
-                            <button type="button" onclick="operar()" class="btn btn-success active">Guardar</button>
-
-                            <div class="alert alert-danger" id="alertaErrorCrearUsuario" role="alert" style="display: none">
-                            </div>
+                            <button type="button" onclick="operar()" class="btn btn-primary">Guardar</button>
 
                         </div>
-                    </div>
-
-                    <div class="col-12 col-md-8">
-                        <div class="container-fluid">
-                            <h3>Listado de funcionarios</h3>
-                            <div id="divUsuarios">
-                            </div>          
+                        <div class="alert alert-danger" id="alertaErrorCrearUsuario" role="alert" style="display: none">
                         </div>
-
                     </div>
-
-
                 </div>
 
             </div>
-
-
         </div>
     </div>
-
-    <script type="module" src="js/firebase.js"></script>
-    <script type="module" src="js/administradorFuncionarios.js"></script>
-
+        <script type="module" src="js/firebase.js"></script>
+        <script type="module" src="js/administradorFuncionarios.js"></script>
 </body>
-
 
 </html>
